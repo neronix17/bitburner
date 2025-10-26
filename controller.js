@@ -25,7 +25,7 @@ const SERVER_STATES = {
 export async function main(ns) {
 	ns.disableLog('ALL');
 
-	ns.resizeTail(1020, 620);
+	ns.ui.resizeTail(1020, 620);
 	//await ns.sleep(0);
 	//ns.resizeTail(1080, 600);
 	const qm = new QuarterMaster(ns, QmConfig.EvalDelay); // re-eval every 2 min
@@ -170,8 +170,8 @@ export class QuarterMaster {
 			tableData.push([
 				{ color: 'white', text: ' ' + metrics.server },
 				{ color: 'white', text: ((metrics.pct * 100).toFixed(2) + '%').padStart(7) },
-				{ color: 'white', text: this.ns.nFormat(metrics.cashPerSecond, '0.0a').padStart(8) },
-				{ color: 'white', text: ' ' + this.ns.tFormat(metrics.batchTime) },
+				{ color: 'white', text: this.ns.formatNumber(metrics.cashPerSecond, '0.0a').padStart(8) },
+				{ color: 'white', text: ' ' + this.ns.formatNumber(metrics.batchTime) },
 				{ color: 'white', text: (Math.round(so.moneyAvailable / so.moneyMax * 100).toString() + '%').padStart(5) },
 				{ color: 'white', text: (Math.round(so.hackDifficulty - so.minDifficulty).toString()).padStart(4) },
 				{ color: stateCol, text: ' ' + metrics.state },
