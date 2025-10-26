@@ -4,7 +4,7 @@ export async function main(ns) {
 	if (destinationFolder != '' && !destinationFolder.endsWith('/'))
 		destinationFolder += '/';
 
-	const BASE_URL = 'https://raw.githubusercontent.com/xxxsinx/bitburner/main/';
+	const BASE_URL = 'https://raw.githubusercontent.com/neronix17/bitburner/main/';
 	const FILES = [
 		'controller.js',
 		'manager.js',
